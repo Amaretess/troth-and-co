@@ -1,19 +1,7 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import { routesConfig } from './config/routesConfig';
-import Navbar from './components/NavBar';
+import { RouterProvider } from "react-router-dom";
+import { routesConfig } from "./config/routesConfig";
+import "./App.css";
 
-
-function App() {
-  return (
-    <> 
-    <Navbar />
-    <Routes>
-      {routesConfig.map((route) => <Route key={route.id} path={route.path} element={route.element} />) }
-    </Routes>
-    </>
-
-  );
-}
+const App = () => <RouterProvider router={routesConfig} />;
 
 export default App;
